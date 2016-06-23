@@ -1,39 +1,27 @@
 package org.opensilk.playground
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.design.widget.CoordinatorLayout
-import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
-import android.support.v4.widget.DrawerLayout
+import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
-import android.support.v7.widget.Toolbar
-import org.jetbrains.anko.find
+import kotlinx.android.synthetic.main.activity_main.*
 
+/**
+ * Layout inflated the normal way through setContentView
+ * Uses android-extensions to access layout components
+ */
 class MainActivity3 : AppCompatActivity() {
-
-    lateinit var drawerLayout : DrawerLayout
-    lateinit var coordinator : CoordinatorLayout
-    lateinit var toolbar : Toolbar
-    lateinit var recycler : RecyclerView
-    lateinit var navigation : NavigationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        drawerLayout = find(R.id.drawer_layout)
-        coordinator = find(R.id.coordinator)
-        toolbar = find(R.id.toolbar)
-        recycler = find(R.id.recycler)
-        navigation = find(R.id.nav_view)
 
         //setup toolbar
         toolbar.attachToActivity(this, drawerLayout);
         //setup navigation
-        navigation.setNavigationItemSelectedListener {
+        navView.setNavigationItemSelectedListener {
             goToNavItem(it)
-            navigation.setCheckedItem(it.itemId)
+            navView.setCheckedItem(it.itemId)
             drawerLayout.closeDrawer(GravityCompat.START)
             true
         }

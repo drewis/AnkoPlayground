@@ -1,5 +1,19 @@
+buildscript {
+    ext {
+        kotlin_version = '1.0.2-1'
+        ankoVersion = '0.9'
+    }
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion 23
@@ -21,6 +35,13 @@ android {
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
+    dataBinding {
+        enabled = true
+    }
+}
+
+kapt {
+    generateStubs = true
 }
 
 dependencies {
@@ -39,7 +60,6 @@ dependencies {
     compile "org.jetbrains.anko:anko-appcompat-v7:$ankoVersion"
     compile "org.jetbrains.anko:anko-design:$ankoVersion"
     compile "org.jetbrains.anko:anko-recyclerview-v7:$ankoVersion"
-}
-repositories {
-    mavenCentral()
+
+    kapt "com.android.databinding:compiler:$gradle_tools_version"
 }

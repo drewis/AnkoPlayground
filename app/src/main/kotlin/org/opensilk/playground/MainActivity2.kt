@@ -27,16 +27,19 @@ class Main2UI : AnkoComponent<MainActivity2> {
     override fun createView(ui: AnkoContext<MainActivity2>): View {
         return with(ui) {
             include<DrawerLayout>(R.layout.activity_main).apply {
-                drawerLayout = find(R.id.drawer_layout)
+                drawerLayout = find(R.id.drawerLayout)
                 coordinator = find(R.id.coordinator)
                 toolbar = find(R.id.toolbar)
                 recycler = find(R.id.recycler)
-                navigation = find(R.id.nav_view)
+                navigation = find(R.id.navView)
             }
         }
     }
 }
 
+/**
+ * Uses Anko to inflate an xml layout
+ */
 class MainActivity2 : AppCompatActivity() {
 
     lateinit var mUI : Main2UI

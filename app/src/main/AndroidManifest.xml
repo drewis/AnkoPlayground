@@ -23,8 +23,14 @@
             android:label="Anko XML Inflated"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
-        <activity android:name=".MainActivity3"
+        <activity
+            android:name=".MainActivity3"
             android:label="Normal XML Inflated"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".MainActivity4"
+            android:label="DataBinding Inflated"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
     </application>

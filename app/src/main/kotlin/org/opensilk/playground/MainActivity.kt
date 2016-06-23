@@ -93,6 +93,9 @@ class MainUI : AnkoComponent<MainActivity> {
     }
 }
 
+/**
+ * Layout is handled by Anko DSL
+ */
 class MainActivity : AppCompatActivity() {
 
     lateinit var mUI : MainUI

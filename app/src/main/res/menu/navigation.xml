@@ -9,4 +9,7 @@
     <item
         android:id="@+id/nav_three"
         android:title="Normal XML Activity"/>
+    <item
+        android:id="@+id/nav_four"
+        android:title="DataBinding Activity"/>
 </menu>
