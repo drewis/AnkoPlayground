@@ -6,6 +6,7 @@ Contains 3 activities:
     * MainActivity: layout created with Anko DSL
     * MainActivity2: layout inflated from XML using Anko
     * MainActivity3: layout inflated from XML the normal way
+    * MainActivity4: databinding layout
 
 Thoughts:
     While the Anko DSL looks really cool and make declaring layouts more fun than xml,
@@ -15,7 +16,7 @@ Thoughts:
     when set programmatically through the DSL
 
     Other views (textView) has much of its logic in the ctor and is very tedious to setup
-    programmatically and Anko does not at the time of writting support applying xml styles
+    programmatically and Anko does not (at the time of writing) support applying xml styles
     to views
 
 
